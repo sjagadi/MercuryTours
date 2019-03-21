@@ -1,0 +1,21 @@
+package com.mercurytours.tests;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.pages.FlightsPage;
+import com.mercurytours.pages.SignOnPage;
+
+public class FlightTest extends BaseTest
+{
+	SignOnPage signOnPage;
+	FlightsPage flightsPage;
+	
+	@BeforeMethod
+	public void setUp()
+	{
+		initConfigurations();
+		signOnPage = new SignOnPage();
+		flightsPage = new FlightsPage();
+	}
+}

@@ -1,0 +1,11 @@
+package com.mercurytours.helpers;
+
+import com.mercurytours.base.BaseTest;
+
+public class CommonHelpers extends BaseTest
+{
+	public void enterText()
+	{
+		
+	}
+}

@@ -1,0 +1,11 @@
+package com.mercurytours.tests;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.pages.FlightsPage;
+
+public class FlightTest extends BaseTest
+{
+	FlightsPage flightsPage;
+	SignOnPage signOnPage;
+	
+}

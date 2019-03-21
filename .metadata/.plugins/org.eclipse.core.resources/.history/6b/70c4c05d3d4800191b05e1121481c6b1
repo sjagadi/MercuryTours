@@ -1,0 +1,27 @@
+package com.mercurytours.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import com.mercurytours.base.BaseTest;
+
+public class RegisterPage extends BaseTest
+{
+	@FindBy(xpath=("//button[text()='Customer Login']"))
+	public WebElement customerLoginBtn;
+	
+	
+	
+	
+	
+	
+	public RegisterPage()
+	{
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+		PageFactory.initElements(factory, this);
+	}
+	
+	
+}

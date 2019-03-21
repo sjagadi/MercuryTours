@@ -1,0 +1,15 @@
+package com.mercurytours.pages;
+
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import com.mercurytours.base.BaseTest;
+
+public class RegisterPage extends BaseTest
+{
+	public RegisterPage()
+	{
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+		PageFactory.initElements(factory, this);
+	}
+}

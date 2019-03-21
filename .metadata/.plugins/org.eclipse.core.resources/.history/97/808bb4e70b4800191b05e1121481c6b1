@@ -1,0 +1,11 @@
+package com.mercurytours.base;
+
+public class Constants 
+{
+	public static final String browser = "chrome";
+	public static final String testsiteurl = "http://newtours.demoaut.com/";
+	public static final String environment = "QA";
+	public static final String username = "sjagadi";
+	public static final String password = "HomeAssignmentTest";
+	
+}

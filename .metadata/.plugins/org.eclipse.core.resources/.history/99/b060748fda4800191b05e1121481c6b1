@@ -1,0 +1,83 @@
+package com.mercurytours.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.testng.Assert;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.helpers.ProjectHelpers;
+
+public class FlightsPage extends BaseTest
+{
+	@FindBy(linkText = "Flights")
+	private WebElement flightsLink;
+
+	@FindBy(xpath = "//input[@value='roundtrip']")
+	private WebElement roundTripRadioButton;
+	
+	@FindBy(xpath = "//input[@value='oneway']")
+	private WebElement oneWayTripRadioButton;
+	
+	@FindBy(name = "passCount")
+	private WebElement passengersDropDown;
+	
+	@FindBy(name = "fromPort")
+	private WebElement departingFromDropDown;
+	
+	@FindBy(name = "toPort")
+	private WebElement arrivingInDropDown;
+	
+	@FindBy(name = "fromMonth")
+	private WebElement departingOnMonthDropDown;
+
+	@FindBy(name = "fromDay")
+	private WebElement departingOnDateDropDown;
+	
+	@FindBy(name = "servClass")
+	private WebElement serviceClassRadioButton;
+	
+	@FindBy(name = "airline")
+	private WebElement airlineDropDown;
+	
+	@FindBy(name = "findFlights")
+	private WebElement continueButton;
+	
+	@FindBy(name = "reserveFlights")
+	private WebElement continueToBookButton;
+	
+	public FlightsPage()
+	{
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+		PageFactory.initElements(factory, this);
+	}
+
+	public void oneWayTripWithEconomyClass()
+	{
+		flightsLink.click();
+		Assert.assertEquals(driver.getTitle(), "Find a Flight: Mercury Tours");
+		ProjectHelpers.selectRadioButton(oneWayTripRadioButton);
+		ProjectHelpers.selectFromDropDown(passengersDropDown, "2");
+		selectDate("June", "30");
+		selectFromAndToPlaces("London", "Seattle");
+		ProjectHelpers.selectRadioButton(serviceClassRadioButton);
+		continueButton.click();
+		ProjectHelpers.selectFlight("Blue Skies Airlines 361");
+		continueToBookButton.click();
+		Assert.assertEquals(driver.getTitle(), "Select a Flight: Mercury Tours");
+		String price = ProjectHelpers.getPrice("Blue Skies Airlines 361");
+	}
+	
+	public void selectDate(String month, String date)
+	{
+		ProjectHelpers.selectFromDropDown(departingOnMonthDropDown, month);
+		ProjectHelpers.selectFromDropDown(departingOnDateDropDown, date);
+	}
+	
+	public void selectFromAndToPlaces(String source, String destination)
+	{
+		ProjectHelpers.selectFromDropDown(departingFromDropDown, source);
+		ProjectHelpers.selectFromDropDown(arrivingInDropDown, destination);
+	}
+}

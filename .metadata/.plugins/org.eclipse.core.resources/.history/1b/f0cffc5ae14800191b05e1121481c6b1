@@ -1,0 +1,46 @@
+package com.mercurytours.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.base.Constants;
+import com.mercurytours.helpers.ExcelHelper;
+import com.mercurytours.pages.FlightsPage;
+import com.mercurytours.pages.SignOnPage;
+
+public class FlightsTest extends BaseTest
+{
+	SignOnPage signOnPage;
+	FlightsPage flightsPage;
+	
+	@BeforeMethod
+	public void setUp()
+	{
+		initConfigurations();
+		signOnPage = new SignOnPage();
+		flightsPage = signOnPage.login(Constants.username, Constants.password);
+		Assert.assertTrue(signOnPage.isLoginSuccessful());
+	}
+	
+	@Test(dataProvider = "getRegistrationData")
+	public void oneWayTripWithEconomyClassTest(String Name, String lName, String phoneNo, String address, String city, String state, String postalCode, String country, String userName, String password, String confirmPassword)
+	{
+		flightsPage.oneWayTripWithEconomyClass(Name);
+	}
+	
+	@DataProvider
+	public Object[][] getRegistrationData()
+	{
+		Object data[][] = ExcelHelper.getTestData("Register");
+		return data;
+	}
+	
+	@AfterMethod
+	public void tearDown()
+	{
+		quitBrowser();
+	}
+}

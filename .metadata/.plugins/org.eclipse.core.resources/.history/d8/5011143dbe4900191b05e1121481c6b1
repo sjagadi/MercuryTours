@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <RollingFile name="Test" fileName="logs/test.log" filePattern="logs/test/$${date:yyyyMMddHH}/TEST-%d{yyyyMMddHH}-%i.log.gz">
+            <PatternLayout pattern="%d %p (%t) [%c] - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="64 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="99"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Test"/>
+        </Root>
+    </Loggers>
+</Configuration>

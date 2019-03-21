@@ -1,0 +1,9 @@
+package com.mercurytours.tests;
+
+import com.mercurytours.pages.SignOnPage;
+
+public class LoginTest
+{
+	SignOnPage signOnPage;
+	
+}

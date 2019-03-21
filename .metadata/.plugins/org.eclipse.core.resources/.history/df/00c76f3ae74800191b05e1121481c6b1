@@ -1,0 +1,101 @@
+package com.mercurytours.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.testng.Assert;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.helpers.ProjectHelpers;
+
+public class FlightsPage extends BaseTest
+{
+	@FindBy(linkText = "Flights")
+	private WebElement flightsLink;
+
+	@FindBy(xpath = "//input[@value='roundtrip']")
+	private WebElement roundTripRadioButton;
+	
+	@FindBy(xpath = "//input[@value='oneway']")
+	private WebElement oneWayTripRadioButton;
+	
+	@FindBy(name = "passCount")
+	private WebElement passengersDropDown;
+	
+	@FindBy(name = "fromPort")
+	private WebElement departingFromDropDown;
+	
+	@FindBy(name = "toPort")
+	private WebElement arrivingInDropDown;
+	
+	@FindBy(name = "fromMonth")
+	private WebElement departingOnMonthDropDown;
+
+	@FindBy(name = "fromDay")
+	private WebElement departingOnDateDropDown;
+	
+	@FindBy(name = "servClass")
+	private WebElement serviceClassRadioButton;
+	
+	@FindBy(name = "airline")
+	private WebElement airlineDropDown;
+	
+	@FindBy(name = "findFlights")
+	private WebElement continueButton;
+	
+	@FindBy(name = "reserveFlights")
+	private WebElement continueToBookButton;
+	
+	@FindBy(name = "passFirst0")
+	private WebElement firstNameTxtBox;
+	
+	@FindBy(name = "passLast0")
+	private WebElement lastNameTxtBox;
+	
+	@FindBy(name = "pass.0.meal")
+	private WebElement mealDropDown;
+	
+	
+	
+	public FlightsPage()
+	{
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+		PageFactory.initElements(factory, this);
+	}
+	
+	public void oneWayTripWithEconomyClass()
+	{
+		flightsLink.click();
+		Assert.assertEquals(driver.getTitle(), "Find a Flight: Mercury Tours:");
+		ProjectHelpers.selectRadioButton(oneWayTripRadioButton);
+		ProjectHelpers.selectFromDropDown(passengersDropDown, ProjectHelpers.readExcelData("Passenger&FlightDetails", "noOfPassengers"));
+		selectDate(ProjectHelpers.readExcelData("Passenger&FlightDetails", "month"), ProjectHelpers.readExcelData("Passenger&FlightDetails", "date"));
+		selectFromAndToPlaces(ProjectHelpers.readExcelData("Passenger&FlightDetails", "fromPlace"), ProjectHelpers.readExcelData("Passenger&FlightDetails", "fromPlace"));
+		ProjectHelpers.selectRadioButton(serviceClassRadioButton);
+		continueButton.click();
+		Assert.assertEquals(driver.getTitle(), "Select a Flight: Mercury Tours");
+		ProjectHelpers.selectFlight(ProjectHelpers.readExcelData("Passenger&FlightDetails", "flightToSelect1"));
+		continueToBookButton.click();
+		Assert.assertEquals(driver.getTitle(), "Book a Flight: Mercury Tours");
+		String price = ProjectHelpers.getPrice(ProjectHelpers.readExcelData("Passenger&FlightDetails", "flightToSelect1"));
+		System.out.println(price);
+	}
+	
+	public void selectDate(String month, String date)
+	{
+		ProjectHelpers.selectFromDropDown(departingOnMonthDropDown, month);
+		ProjectHelpers.selectFromDropDown(departingOnDateDropDown, date);
+	}
+	
+	public void selectFromAndToPlaces(String source, String destination)
+	{
+		ProjectHelpers.selectFromDropDown(departingFromDropDown, source);
+		ProjectHelpers.selectFromDropDown(arrivingInDropDown, destination);
+	}
+	
+	public void fillPassengerDetails()
+	{
+		
+	}
+}

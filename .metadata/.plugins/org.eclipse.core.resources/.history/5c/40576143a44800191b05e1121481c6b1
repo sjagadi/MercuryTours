@@ -1,0 +1,48 @@
+package com.mercurytours.helpers;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import com.mercurytours.base.BaseTest;
+
+public class ProjectHelpers extends BaseTest
+{
+	public static void enterText(WebElement textbox, String value)
+	{
+		textbox.clear();
+		textbox.sendKeys(value);
+	}
+	
+	public static void selectFromDropDown(WebElement dropDown, String valueToSelect)
+	{
+		//Select the value from the drop-down
+		Select select = new Select(dropDown);
+		select.selectByVisibleText(valueToSelect);
+	}
+	
+	public static void selectRadioButton(WebElement radioButton)
+	{
+		//Click the radio button only if it is not selected already
+		if(!radioButton.isSelected())
+		{
+			radioButton.click();
+		}
+	}
+	
+	public static void selectFlight(String flightName)
+	{
+		//Select the flight by just providing the flight name
+		WebElement flightRadioButton = driver.findElement(By.xpath("//b[contains(text(), '" + flightName + "')]/../../..//input"));
+		if(!flightRadioButton.isSelected())
+		{
+			flightRadioButton.click();
+		}
+	}
+	
+	public static String getPrice(String flightName)
+	{
+		WebElement pricePlaceHolder = driver.findElement(By.xpath("//b[contains(text(), '" + flightName + "')]/../../../td[3]/font"));
+		return pricePlaceHolder.getText();
+	}
+}

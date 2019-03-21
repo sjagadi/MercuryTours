@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="2" ignored="0" total="6" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="88941" started-at="2019-03-21T18:57:44Z" finished-at="2019-03-21T18:59:13Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="88941" started-at="2019-03-21T18:57:44Z" finished-at="2019-03-21T18:59:13Z">
+      <class name="com.mercurytours.tests.FlightsTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="setUp" is-config="true" duration-ms="9026" started-at="2019-03-21T18:58:07Z" finished-at="2019-03-21T18:58:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="oneWayTripWithAirlinePreferenceTest()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="oneWayTripWithAirlinePreferenceTest" duration-ms="3152" started-at="2019-03-21T18:58:16Z" description="One way trip with airline preference test" finished-at="2019-03-21T18:58:19Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Onward flight must not be displayed when one way flight is selected expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Onward flight must not be displayed when one way flight is selected expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertFalse(Assert.java:65)
+at com.mercurytours.pages.FlightsPage.oneWayTripWithAirlinePreference(FlightsPage.java:155)
+at com.mercurytours.tests.FlightsTest.oneWayTripWithAirlinePreferenceTest(FlightsTest.java:34)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oneWayTripWithAirlinePreferenceTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="tearDown" is-config="true" duration-ms="1646" started-at="2019-03-21T18:58:19Z" finished-at="2019-03-21T18:58:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="setUp" is-config="true" duration-ms="11328" started-at="2019-03-21T18:58:21Z" finished-at="2019-03-21T18:58:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="oneWayTripWithEconomyClassTest()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="oneWayTripWithEconomyClassTest" duration-ms="2594" started-at="2019-03-21T18:58:32Z" description="One way trip with economy class test" finished-at="2019-03-21T18:58:35Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Onward flight must not be displayed when one way flight is selected expected [false] but found [true]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Onward flight must not be displayed when one way flight is selected expected [false] but found [true]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertFalse(Assert.java:65)
+at com.mercurytours.pages.FlightsPage.oneWayTripWithEconomyClass(FlightsPage.java:130)
+at com.mercurytours.tests.FlightsTest.oneWayTripWithEconomyClassTest(FlightsTest.java:28)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- oneWayTripWithEconomyClassTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="tearDown" is-config="true" duration-ms="1829" started-at="2019-03-21T18:58:35Z" finished-at="2019-03-21T18:58:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="setUp" is-config="true" duration-ms="8067" started-at="2019-03-21T18:58:37Z" finished-at="2019-03-21T18:58:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="roundTripWithAirlinePreferenceTest()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="roundTripWithAirlinePreferenceTest" duration-ms="8175" started-at="2019-03-21T18:58:45Z" description="Round trip with airline preference test" finished-at="2019-03-21T18:58:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- roundTripWithAirlinePreferenceTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="tearDown" is-config="true" duration-ms="1841" started-at="2019-03-21T18:58:53Z" finished-at="2019-03-21T18:58:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="setUp" is-config="true" duration-ms="8465" started-at="2019-03-21T18:58:55Z" finished-at="2019-03-21T18:59:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="roundTripWithEconomyClassTest()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="roundTripWithEconomyClassTest" duration-ms="7570" started-at="2019-03-21T18:59:04Z" description="Round trip with economy class test" finished-at="2019-03-21T18:59:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- roundTripWithEconomyClassTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mercurytours.tests.FlightsTest@51399530]" name="tearDown" is-config="true" duration-ms="1913" started-at="2019-03-21T18:59:11Z" finished-at="2019-03-21T18:59:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mercurytours.tests.FlightsTest -->
+      <class name="com.mercurytours.tests.SignOnTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mercurytours.tests.SignOnTest@6771beb3]" name="setUp" is-config="true" duration-ms="5491" started-at="2019-03-21T18:57:57Z" finished-at="2019-03-21T18:58:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.mercurytours.tests.SignOnTest@6771beb3]" name="loginTest" duration-ms="2913" started-at="2019-03-21T18:58:02Z" description="Sign-on and sogn-off test" finished-at="2019-03-21T18:58:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mercurytours.tests.SignOnTest@6771beb3]" name="tearDown" is-config="true" duration-ms="1631" started-at="2019-03-21T18:58:05Z" finished-at="2019-03-21T18:58:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mercurytours.tests.SignOnTest -->
+      <class name="com.mercurytours.tests.RegisterUserTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.mercurytours.tests.RegisterUserTest@5e0e82ae]" name="setUp" is-config="true" duration-ms="6463" started-at="2019-03-21T18:57:45Z" finished-at="2019-03-21T18:57:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="registerNewUserTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mercurytours.tests.RegisterUserTest@5e0e82ae]" name="registerNewUserTest" duration-ms="4533" started-at="2019-03-21T18:57:51Z" description="Register new user test" data-provider="getRegistrationData" finished-at="2019-03-21T18:57:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Santosh]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Kumar]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[+420778491597]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Pague address]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Prague]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Praha]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[102 00]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[CZECH REPUBLIC]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[admin@123]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[admin@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registerNewUserTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.mercurytours.tests.RegisterUserTest@5e0e82ae]" name="tearDown" is-config="true" duration-ms="697" started-at="2019-03-21T18:57:56Z" finished-at="2019-03-21T18:57:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.mercurytours.tests.RegisterUserTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

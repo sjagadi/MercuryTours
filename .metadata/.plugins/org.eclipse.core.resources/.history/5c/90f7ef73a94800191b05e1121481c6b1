@@ -1,0 +1,61 @@
+package com.mercurytours.pages;
+
+import org.testng.Assert;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.helpers.ProjectHelpers;
+
+public class SignOnPage extends BaseTest
+{
+	@FindBy(linkText = "SIGN-ON")
+	public WebElement signOnLink;
+
+	@FindBy(name = "userName")
+	public WebElement userNameTxtBox;
+
+	@FindBy(name = "password")
+	public WebElement passwordTxtBox;
+
+	@FindBy(name = "login")
+	public WebElement loginButton;
+	
+	@FindBy(linkText = "SIGN-OFF")
+	public WebElement signOffLink;
+
+	public SignOnPage()
+	{
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+		PageFactory.initElements(factory, this);
+	}
+
+	public FlightsPage login(String userName, String password)
+	{
+		signOnLink.click();
+		ProjectHelpers.enterText(userNameTxtBox, userName);
+		ProjectHelpers.enterText(passwordTxtBox, password);
+		loginButton.click();
+		boolean isLoginSuccessful = signOffLink.isDisplayed();
+		Assert.assertTrue(isLoginSuccessful);
+		return new FlightsPage();
+	}
+	
+	public boolean isLoginSuccessful()
+	{
+		boolean loginSuccessful = false;
+		try
+		{
+			if(signOffLink.isDisplayed())
+			{
+				
+			}
+		} 
+		catch (Exception e)
+		{
+			// TODO: handle exception
+		}
+	}
+}

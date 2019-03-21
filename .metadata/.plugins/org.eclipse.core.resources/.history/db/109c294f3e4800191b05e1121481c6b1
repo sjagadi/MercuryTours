@@ -1,0 +1,8 @@
+package com.mercurytours.tests;
+
+import com.mercurytours.base.BaseTest;
+
+public class RegisterUserTest extends BaseTest
+{
+	
+}

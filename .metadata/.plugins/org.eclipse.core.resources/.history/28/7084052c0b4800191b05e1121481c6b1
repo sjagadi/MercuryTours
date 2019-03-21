@@ -1,0 +1,19 @@
+package com.mercurytours.base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class BaseTest
+{
+	public static WebDriver driver;
+	public static WebDriverWait wait;
+	public static String browser;
+	
+	public static void initConfigurations()
+	{
+		if(Constants.browser.equalsIgnoreCase("chrome"))
+		{
+			
+		}
+	}
+}

@@ -1,0 +1,64 @@
+package com.mercurytours.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.helpers.CommonHelpers;
+
+public class RegisterPage extends BaseTest
+{
+	@FindBy(linkText=("REGISTER"))
+	public WebElement registerLink;
+	
+	@FindBy(name=("firstName"))
+	public WebElement firstNameTxtBox;
+	
+	@FindBy(name=("lastName"))
+	public WebElement lastNameTxtBox;
+	
+	@FindBy(name=("phone"))
+	public WebElement phoneTxtBox;
+	
+	@FindBy(name=("address1"))
+	public WebElement addressTxtBox;
+	
+	@FindBy(name=("city"))
+	public WebElement cityTxtBox;
+	
+	@FindBy(name=("state"))
+	public WebElement stateTxtBox;
+	
+	@FindBy(name=("postalCode"))
+	public WebElement postalCodeTxtBox;
+	
+	@FindBy(name=("country"))
+	public WebElement countryDropDown;
+	
+	@FindBy(id=("email"))
+	public WebElement emailTxtBox;
+	
+	@FindBy(name=("password"))
+	public WebElement passwordTxtBox;
+	
+	@FindBy(name=("confirmPassword"))
+	public WebElement confirmPasswordTxtBox;
+	
+	@FindBy(name=("register"))
+	public WebElement submitButton;
+	
+	public RegisterPage()
+	{
+		AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 10);
+		PageFactory.initElements(factory, this);
+	}
+	
+	public void registerNewUser()
+	{
+		registerLink.click();
+		CommonHelpers.enterText(firstNameTxtBox, "Santosh");
+	}
+	
+}

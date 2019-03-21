@@ -1,0 +1,17 @@
+package com.mercurytours.tests;
+
+import org.testng.annotations.BeforeMethod;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.pages.SignOnPage;
+
+public class LoginTest
+{
+	SignOnPage signOnPage;
+	@BeforeMethod
+	public void setUp()
+	{
+		BaseTest.initConfigurations();
+		signOnPage = new SignOnPage();
+	}
+}

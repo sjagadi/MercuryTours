@@ -1,0 +1,13 @@
+package com.mercurytours.helpers;
+
+import org.openqa.selenium.WebElement;
+
+import com.mercurytours.base.BaseTest;
+
+public class CommonHelpers extends BaseTest
+{
+	public static void enterText(WebElement textbox, String value)
+	{
+		
+	}
+}

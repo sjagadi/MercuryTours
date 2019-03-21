@@ -1,0 +1,37 @@
+package com.mercurytours.tests;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import com.mercurytours.base.BaseTest;
+import com.mercurytours.base.Constants;
+import com.mercurytours.pages.FlightsPage;
+import com.mercurytours.pages.SignOnPage;
+
+public class FlightTest extends BaseTest
+{
+	SignOnPage signOnPage;
+	FlightsPage flightsPage;
+	
+	@BeforeMethod
+	public void setUp()
+	{
+		initConfigurations();
+		signOnPage = new SignOnPage();
+		signOnPage.login(Constants.username, Constants.password);
+		flightsPage = new FlightsPage();
+	}
+	
+	@Test
+	public void OneWayTripWithEconomyClassTest()
+	{
+		flightsPage.OneWayTripWithEconomyClass();
+	}
+	
+	@AfterMethod
+	public void tearDown()
+	{
+		quitBrowser();
+	}
+}

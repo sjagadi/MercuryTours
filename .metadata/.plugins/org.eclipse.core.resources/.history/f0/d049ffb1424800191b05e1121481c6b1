@@ -1,0 +1,21 @@
+package com.mercurytours.helpers;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import com.mercurytours.base.BaseTest;
+
+public class CommonHelpers extends BaseTest
+{
+	public static void enterText(WebElement textbox, String value)
+	{
+		textbox.clear();
+		textbox.sendKeys(value);
+	}
+	
+	public static void selectFromDropDown(WebElement dropDown, String valueToSelect)
+	{
+		Select select = new Select(dropDown);
+		select.selectByValue(valueToSelect);
+	}
+}
